@@ -19,17 +19,21 @@ export default class BinList extends Component {
             this.setState({bins: response.data})
         })
     }
+    
+    //5 bins in data base
+    //delete clears data and makes it null
+    //function () if null = display add bin
 
     render() {
         return (
             <div>
-                <p>bins are displayed here</p>
                {this.state.bins.map( (bin, i) => {
                    return (
-                   <Link to={{pathname: `/shelfs/${bin.bin_name}`}} key={i}> <div> {bin.bin_name} </div> </Link>
+                    <div className="Bin-container">
+                        <Link to={{pathname: `/shelfs/${bin.bin_name}`}} key={i}> <div>Bin {bin.bin_name} </div> </Link>
+                    </div>
                    )
-               })}
-               
+               })}   
            </div>
         )
     }

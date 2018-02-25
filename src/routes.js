@@ -8,5 +8,6 @@ export default (
     <Switch>
         <Route component = {Home} exact path="/"/>
         <Route component = {BinList} path="/shelfs/:shelf_id"/>
+        <Route component = {Item} path="/item/:item_id"/>
     </Switch>
 )

@@ -22,10 +22,12 @@ export default class Home extends Component {
 
     render() {
         return (
-           <div>
+           <div ClassName="App">
                {this.state.shelfs.map( (shelf, i) => {
                    return (
-                   <Link to={{pathname: `/shelfs/${shelf.shelf_id}`}} key={i}> <div> {shelf.shelf} </div> </Link>
+                    <div className="Shelf-container">
+                        <Link to={{pathname: `/shelfs/${shelf.shelf_id}`}} key={i}> <div> Shelf {shelf.shelf} </div> </Link>
+                    </div>
                    )
                })}
                

@@ -17,5 +17,14 @@ module.exports = {
             console.log(222, shelf)
             res.status(200).send(shelf)
         }).catch(err => res.status(500).send(err))
+    },
+    getItem: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_item()
+        .then(item => {
+            console.log(4444, item)
+            res.status(200).send(item)
+        }).catch(err => res.status(500).send(err))
     }
 }
