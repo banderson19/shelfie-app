@@ -30,7 +30,7 @@ export default class BinList extends Component {
                {this.state.bins.map( (bin, i) => {
                    return (
                     <div className="Bin-container">
-                        <Link to={{pathname: `/shelfs/${bin.bin_name}`}} key={i}> <div>Bin {bin.bin_name} </div> </Link>
+                        <Link to={{pathname: `/shelfs/${this.props.match.params.shelf_id}/${bin.bin_name}`}} key={i}> <div>Bin {bin.bin_name} </div> </Link>
                     </div>
                    )
                })}   

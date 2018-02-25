@@ -13,7 +13,7 @@ export default class Home extends Component {
     componentDidMount = () => {
         axios({
             method: 'GET',
-            url: 'http://localhost:3000/api/shelfs/'
+            url: `http://localhost:3000/api/shelfs/`
         }).then(response => {
             console.log(response.data)
             this.setState({shelfs: response.data})
@@ -22,7 +22,7 @@ export default class Home extends Component {
 
     render() {
         return (
-           <div ClassName="App">
+           <div className="App">
                {this.state.shelfs.map( (shelf, i) => {
                    return (
                     <div className="Shelf-container">

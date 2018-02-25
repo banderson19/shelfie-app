@@ -2,12 +2,13 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home'
 import BinList from './components/BinList/BinList'
+import Item from './components/Item/Item';
 
 
 export default (
     <Switch>
         <Route component = {Home} exact path="/"/>
         <Route component = {BinList} path="/shelfs/:shelf_id"/>
-        <Route component = {Item} path="/item/:item_id"/>
+        <Route component = {Item} path="/item/:shelf_id/:bin_name"/>
     </Switch>
 )

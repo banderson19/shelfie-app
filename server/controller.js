@@ -18,7 +18,7 @@ module.exports = {
             res.status(200).send(shelf)
         }).catch(err => res.status(500).send(err))
     },
-    getItem: (req, res, next) => {
+    getItem: (req, res) => {
         const dbInstance = req.app.get('db');
 
         dbInstance.get_item()

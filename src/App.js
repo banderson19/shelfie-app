@@ -11,7 +11,6 @@ class App extends Component {
           <img src='./../img/download.shelfie.logo.png'className="img" alt=''></img>
           <h1 className="App-title">SHELFIE APP</h1>
         </header>
-        
         {routes}
       </div>
     );
