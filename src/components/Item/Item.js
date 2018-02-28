@@ -4,26 +4,32 @@ import axios from 'axios';
 
 export default class Item extends Component {
     constructor() {
-        super() 
+        super();
         this.state = {
-            item: {}
-        }
+            item: null,
+            name: '',
+            price: 0
+        };
     }
         componentDidMount =() => {
         axios({
             method: 'GET',
             url: `http://localhost:3000/api/shelfs/${this.props.match.params.shelf_id}/${this.props.match.params.bin_name}`
         }).then(response => {
-            console.log(response)
+            console.log(response.data)
+            this.setState({ item: response.data, name: response.data.item_name, price: response.data.price});
+            console.log(this.state.name)
         })
-    }
+    };
         
     render() {
         return(
-            <p>item here</p>
-            // <div className="item_container">
-            
-            // </div>
+            <div>
+            <p>this is the item id= {this.state.name}</p>
+                <div className="item-container">
+                    <input className="inputLine" placeholder={this.state.name}></input>
+                </div>
+            </div>
         )
     }
 }
