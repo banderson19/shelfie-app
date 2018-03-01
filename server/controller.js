@@ -20,11 +20,22 @@ module.exports = {
     },
     getItem: (req, res) => {
         const dbInstance = req.app.get('db');
-
-        dbInstance.get_item()
+        const {params} = req;
+        console.log(1111, params)
+        dbInstance.get_item([params.bin_id])
         .then(item => {
             console.log(4444, item)
             res.status(200).send(item)
         }).catch(err => res.status(500).send(err))
+    },
+    addItem: (req, res) => {
+        const dbInstance = req.app.get('db');
+        const { params } = req;
+
+        dbInstance.post_item(params.item_name, params.item_price)
+        .then(item => {
+            console.log(555, item)
+            res.status(200).send(item)
+        }).catch(err => res.status(200).send(err))
     }
 }

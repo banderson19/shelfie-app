@@ -1,1 +1,1 @@
-SELECT * FROM item
+SELECT * FROM item WHERE bin_id = $1

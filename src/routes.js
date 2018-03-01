@@ -9,6 +9,6 @@ export default (
     <Switch>
         <Route component = {Home} exact path="/"/>
         <Route component = {BinList} path="/shelfs/:shelf_id"/>
-        <Route component = {Item} path="/api/shelfs/:shelf_id/:bin_name"/>
+        <Route component = {Item} path="/api/shelfs/:shelf_id/:bin_id"/>
     </Switch>
 )
